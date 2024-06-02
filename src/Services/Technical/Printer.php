@@ -30,8 +30,8 @@ class Printer
         echo sprintf('<b>%s</b>: %s', $description, $value);
     }
 
-    public function heading(float|int|string|bool $value, int $count = 3): void
+    public function heading(float|int|string|bool $value, int $level = 3): void
     {
-        echo sprintf('<h%d>%s</h%d>', $count, $value, $count);
+        echo sprintf('<h%d>%s</h%d>', $level, $value, $level);
     }
 }
