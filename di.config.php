@@ -1,6 +1,5 @@
 <?php
 
-use App\Controllers\ControllerInterface;
 use Invoker\Invoker;
 use Invoker\InvokerInterface;
 use Psr\Container\ContainerInterface;
@@ -12,5 +11,4 @@ return [
     },
 
     Request::class => DI\factory(fn() => Request::createFromGlobals()),
-    ControllerInterface::class => DI\autowire(),
 ];

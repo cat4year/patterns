@@ -9,6 +9,7 @@ use FastRoute\RouteCollector;
 use Invoker\InvokerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+
 use function FastRoute\simpleDispatcher;
 
 readonly class RouteDispatcher
@@ -17,8 +18,7 @@ readonly class RouteDispatcher
         private Request          $request,
         private Response         $response,
         private InvokerInterface $invoker,
-    )
-    {
+    ) {
     }
 
     public function fastRoute(string $basePath = ''): void
