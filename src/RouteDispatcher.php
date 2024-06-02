@@ -21,9 +21,13 @@ readonly class RouteDispatcher
     ) {
     }
 
-    public function fastRoute(string $basePath = ''): void
+    public function fastRoute(): void
     {
         $dispatcher = simpleDispatcher(function (RouteCollector $r) {
+            $r->get('/', [HomeController::class, 'show']);
+            $r->addGroup('/creational', function (RouteCollector $r) {
+                $r->get('/abstract-factory', [AbstractFactoryController::class, 'show']);
+            });
         });
 
         $httpMethod = $this->request->getMethod();
