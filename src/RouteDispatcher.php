@@ -4,6 +4,7 @@ namespace App;
 
 use App\Controllers\HomeController;
 use App\Controllers\Patterns\Creational\AbstractFactoryController;
+use App\Controllers\Patterns\Creational\BuilderController;
 use App\Controllers\Patterns\Creational\FactoryMethodController;
 use FastRoute\Dispatcher;
 use FastRoute\RouteCollector;
@@ -29,6 +30,7 @@ readonly class RouteDispatcher
             $r->addGroup('/creational', function (RouteCollector $r) {
                 $r->get('/factory-method', [FactoryMethodController::class, 'show']);
                 $r->get('/abstract-factory', [AbstractFactoryController::class, 'show']);
+                $r->get('/builder', [BuilderController::class, 'show']);
             });
         });
 

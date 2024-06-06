@@ -13,6 +13,7 @@ class HomeController
 <h1>Главная</h1>
 <a href="/creational/factory-method">Фабричный метод</a><br>
 <a href="/creational/abstract-factory">Абстрактный фабричный метод</a><br>
+<a href="/creational/builder">Строитель</a><br>
 </body>
 </html>';
     }

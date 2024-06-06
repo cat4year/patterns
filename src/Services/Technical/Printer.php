@@ -6,10 +6,19 @@ namespace App\Services\Technical;
 
 class Printer
 {
-    public function array(string $name, array $array): void
+    public function array(string $name, array $array, int $spaceCount = 0): void
     {
-        $this->heading($name . ':', 4);
+        $headingSpaceCount = $spaceCount > 0 ? $spaceCount - 1 : 0;
+        $valueSpaceCount = $spaceCount > 0 ? $spaceCount + 1 : 0;
+
+        $this->heading(str_repeat('&nbsp;', $headingSpaceCount) . $name . ':', 4);
+
         foreach ($array as $key => $value) {
+            if (is_array($value)) {
+                $this->array((string) $key, $value, ++$spaceCount);
+                continue;
+            }
+            $key = str_repeat('&nbsp;', $valueSpaceCount) . $key;
             $this->descriptionValue($key, $value);
             $this->blankLines();
         }
