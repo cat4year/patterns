@@ -27,15 +27,15 @@ readonly class BuilderController extends AbstractController
 
     private function execute(ProductManager $productManager): void
     {
-        $this->printer->heading('Превью карточка товара',2);
+        $this->printer->heading('Превью карточка товара', 2);
         $previewProduct = $productManager->createPreviewProduct();
         $this->printer->array('Данные', $previewProduct->toArray());
 
-        $this->printer->heading('Детальная карточка товара',2);
+        $this->printer->heading('Детальная карточка товара', 2);
         $detailProduct = $productManager->createDetailProduct();
         $this->printer->array('Данные', $detailProduct->toArray());
 
-        $this->printer->heading('Товар в заказе',2);
+        $this->printer->heading('Товар в заказе', 2);
         $orderProduct = $productManager->createOrderProduct();
         $this->printer->array('Данные', $orderProduct->toArray());
 

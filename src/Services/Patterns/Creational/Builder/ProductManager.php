@@ -29,7 +29,7 @@ readonly class ProductManager
             ->picture(['url' => 'https://example.com/goroshek.jpg', 'alt' => 'Горошек'])
             ->slider([
                 ['url' => 'https://example.com/goroshek.jpg', 'alt' => 'Горошек'],
-                ['url' => 'https://example.com/goroshek2.jpg', 'alt' => 'Горошек в профиль']
+                ['url' => 'https://example.com/goroshek2.jpg', 'alt' => 'Горошек в профиль'],
             ])
             ->getProduct();
     }
