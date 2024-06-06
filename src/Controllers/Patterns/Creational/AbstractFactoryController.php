@@ -4,17 +4,13 @@ declare(strict_types=1);
 
 namespace App\Controllers\Patterns\Creational;
 
+use App\Controllers\AbstractController;
 use App\Services\Patterns\Creational\AbstractFactory\CustomerFactoryInterface;
 use App\Services\Patterns\Creational\AbstractFactory\IndividualCustomerFactory;
 use App\Services\Patterns\Creational\AbstractFactory\LegalCustomerFactory;
-use App\Services\Technical\Printer;
 
-readonly class AbstractFactoryController
+readonly class AbstractFactoryController extends AbstractController
 {
-    public function __construct(private Printer $printer)
-    {
-    }
-
     /**
      * Показываю реализацию абстрактной фабрики на примере семейств классов Физ. лица и Юр. лица
      * Интерфейсы упрощенны, и не являются достаточными для реальной работы
@@ -22,9 +18,9 @@ readonly class AbstractFactoryController
     public function show(): void
     {
         $this->printer->heading('Реализация фабрики для 2ух типов плательщиков', 1);
-        $this->executeFactory(new IndividualCustomerFactory());
+        $this->executeFactory($this->container->get(IndividualCustomerFactory::class));
         $this->printer->blankLines(2);
-        $this->executeFactory(new LegalCustomerFactory());
+        $this->executeFactory($this->container->get(LegalCustomerFactory::class));
     }
 
     private function executeFactory(CustomerFactoryInterface $factory): void
