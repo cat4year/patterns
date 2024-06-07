@@ -6,6 +6,7 @@ use App\Controllers\HomeController;
 use App\Controllers\Patterns\Creational\AbstractFactoryController;
 use App\Controllers\Patterns\Creational\BuilderController;
 use App\Controllers\Patterns\Creational\FactoryMethodController;
+use App\Controllers\Patterns\Creational\PrototypeController;
 use FastRoute\Dispatcher;
 use FastRoute\RouteCollector;
 use Invoker\InvokerInterface;
@@ -31,6 +32,7 @@ readonly class RouteDispatcher
                 $r->get('/factory-method', [FactoryMethodController::class, 'show']);
                 $r->get('/abstract-factory', [AbstractFactoryController::class, 'show']);
                 $r->get('/builder', [BuilderController::class, 'show']);
+                $r->get('/prototype', [PrototypeController::class, 'show']);
             });
         });
 
