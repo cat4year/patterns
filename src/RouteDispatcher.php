@@ -7,6 +7,7 @@ use App\Controllers\Patterns\Creational\AbstractFactoryController;
 use App\Controllers\Patterns\Creational\BuilderController;
 use App\Controllers\Patterns\Creational\FactoryMethodController;
 use App\Controllers\Patterns\Creational\PrototypeController;
+use App\Controllers\Patterns\Creational\SingletonController;
 use FastRoute\Dispatcher;
 use FastRoute\RouteCollector;
 use Invoker\InvokerInterface;
@@ -33,6 +34,7 @@ readonly class RouteDispatcher
                 $r->get('/abstract-factory', [AbstractFactoryController::class, 'show']);
                 $r->get('/builder', [BuilderController::class, 'show']);
                 $r->get('/prototype', [PrototypeController::class, 'show']);
+                $r->get('/singleton', [SingletonController::class, 'show']);
             });
         });
 

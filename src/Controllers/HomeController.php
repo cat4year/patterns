@@ -15,6 +15,7 @@ class HomeController
 <a href="/creational/abstract-factory">Абстрактный фабричный метод</a><br>
 <a href="/creational/builder">Строитель</a><br>
 <a href="/creational/prototype">Прототип</a><br>
+<a href="/creational/singleton">Одиночка</a><br>
 </body>
 </html>';
     }
