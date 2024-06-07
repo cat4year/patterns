@@ -5,19 +5,21 @@ declare(strict_types=1);
 namespace App\Controllers\Patterns\Creational;
 
 use App\Controllers\AbstractController;
-use App\Services\Patterns\Creational\AbstractFactory\IndividualCustomerFactory;
 use App\Services\Patterns\Creational\Builder\ProductManager;
 
 readonly class BuilderController extends AbstractController
 {
     /**
-     * Показываю реализацию строителя на примере товарного репозитория.
+     * Показываю реализацию строителя на примере создания товаров разных типов
      * Будем собирать превью товар, детальный товар, товар корзины
      * Интерфейсы упрощенны, и не являются достаточными для реальной работы
      *
-     * @todo: Рассмотреть все вариации и глубже разобраться в паттерне
-     * В данный момент в ProductManager'е будто создаем болванку
-     * Возможно стоит прокидывать аргументы каждому методу
+     * В данный момент в ProductManager'е логично создавать только какой-то шаблон товара или фикстуру
+     * Возможно стоит прокидывать аргументы каждому методу, но тогда мы возвращаемся к проблеме большого конструктора
+     *
+     * Для создания типов товаров можно прокидывать 1 аргумент с опциями в виде массива или объекта
+     * Основное использование и выгода строителя будет видна в клиентском коде, если нам нужно будет выйти за пределы
+     * работы с 3мя шаблонами товаров
      */
     public function show(): void
     {
@@ -38,6 +40,5 @@ readonly class BuilderController extends AbstractController
         $this->printer->heading('Товар в заказе', 2);
         $orderProduct = $productManager->createOrderProduct();
         $this->printer->array('Данные', $orderProduct->toArray());
-
     }
 }
