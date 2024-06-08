@@ -1,8 +1,5 @@
 <?php
 
-use App\Services\Patterns\Creational\AbstractFactory\CustomerFactoryInterface;
-use App\Services\Patterns\Creational\AbstractFactory\DeliveryInterface;
-use App\Services\Patterns\Creational\AbstractFactory\PaymentInterface;
 use App\Services\Patterns\Creational\Builder\ProductBuilder;
 use App\Services\Patterns\Creational\Builder\ProductBuilderInterface;
 use Invoker\Invoker;
@@ -16,8 +13,5 @@ return [
     },
 
     Request::class => DI\factory(fn() => Request::createFromGlobals()),
-    DeliveryInterface::class => DI\autowire(),
-    PaymentInterface::class => DI\autowire(),
-    CustomerFactoryInterface::class => DI\autowire(),
     ProductBuilderInterface::class => DI\get(ProductBuilder::class),
 ];
