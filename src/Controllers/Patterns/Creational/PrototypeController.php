@@ -10,7 +10,7 @@ use App\Services\Patterns\Creational\Prototype\PreviewProduct;
 readonly class PrototypeController extends AbstractController
 {
     /**
-     * Показываю реализацию паттерна прототип на примере клонирования товара
+     * Реализация паттерна прототип на примере клонирования товара
      */
     public function show(): void
     {

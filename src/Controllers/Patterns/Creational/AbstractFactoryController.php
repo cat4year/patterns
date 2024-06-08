@@ -12,7 +12,7 @@ use App\Services\Patterns\Creational\AbstractFactory\LegalCustomerFactory;
 readonly class AbstractFactoryController extends AbstractController
 {
     /**
-     * Показываю реализацию абстрактной фабрики на примере семейств классов Физ. лица и Юр. лица
+     * Реализация абстрактной фабрики на примере семейств классов Физ. лица и Юр. лица
      * Интерфейсы упрощенны, и не являются достаточными для реальной работы
      */
     public function show(): void

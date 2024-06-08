@@ -12,7 +12,7 @@ use App\Services\Patterns\Creational\FactoryMethod\LegalCustomer;
 readonly class FactoryMethodController extends AbstractController
 {
     /**
-     * Показываю реализацию фабричного метода на примере покупателя и функционала платежей
+     * Реализация фабричного метода на примере покупателя и функционала платежей
      * Интерфейсы упрощенны, и не являются достаточными для реальной работы
      */
     public function show(): void

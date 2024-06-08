@@ -10,7 +10,7 @@ use App\Services\Patterns\Creational\Singleton\Logger;
 readonly class SingletonController extends AbstractController
 {
     /**
-     * Показываю реализацию паттерна одиночка на примере создания класса приложения
+     * Реализация паттерна одиночка на примере создания класса приложения
      */
     public function show(): void
     {
