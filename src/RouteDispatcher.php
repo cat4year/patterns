@@ -8,6 +8,7 @@ use App\Controllers\Patterns\Creational\BuilderController;
 use App\Controllers\Patterns\Creational\FactoryMethodController;
 use App\Controllers\Patterns\Creational\PrototypeController;
 use App\Controllers\Patterns\Creational\SingletonController;
+use App\Controllers\Patterns\Structural\AdapterController;
 use FastRoute\Dispatcher;
 use FastRoute\RouteCollector;
 use Invoker\InvokerInterface;
@@ -35,6 +36,9 @@ readonly class RouteDispatcher
                 $r->get('/builder', [BuilderController::class, 'show']);
                 $r->get('/prototype', [PrototypeController::class, 'show']);
                 $r->get('/singleton', [SingletonController::class, 'show']);
+            });
+            $r->addGroup('/structural', function (RouteCollector $r) {
+                $r->get('/adapter', [AdapterController::class, 'show']);
             });
         });
 
