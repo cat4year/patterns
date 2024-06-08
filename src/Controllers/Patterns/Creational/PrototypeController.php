@@ -21,11 +21,13 @@ readonly class PrototypeController extends AbstractController
     private function execute(): void
     {
         $this->printer->heading('Базовый объект', 2);
-        $previewProduct = new PreviewProduct('Горошек',
+        $previewProduct = new PreviewProduct(
+            'Горошек',
             155.5,
             ['Акция', 'Хит продаж'],
             ['url' => 'https://example.com/goroshek.jpg', 'alt' => 'Горошек'],
-            15);
+            15
+        );
         $this->printer->array('Данные', $previewProduct->toArray());
 
         $this->printer->heading('Клонированный объект', 2);

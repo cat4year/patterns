@@ -60,17 +60,17 @@ readonly class AdapterController extends AbstractController
             [
                 'id' => 1,
                 'price' => 100,
-                'weight' => 11
+                'weight' => 11,
             ],
             [
                 'id' => 2,
                 'price' => 200.5,
-                'weight' => 22
+                'weight' => 22,
             ],
             [
                 'id' => 3,
                 'price' => 300,
-                'weight' => 33.3
+                'weight' => 33.3,
             ],
         ];
     }

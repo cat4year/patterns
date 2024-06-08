@@ -12,8 +12,7 @@ class PreviewProduct
         private array  $tags = [],
         private array  $picture = [],
         private int    $sectionId = 0
-    )
-    {
+    ) {
     }
 
     public function getName(): string
