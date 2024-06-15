@@ -4,7 +4,13 @@ namespace App\DI;
 
 use DI\ContainerBuilder;
 use Exception;
+use Invoker\Exception\InvocationException;
+use Invoker\Exception\NotCallableException;
+use Invoker\Exception\NotEnoughParametersException;
+use Invoker\InvokerInterface;
+use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\ContainerInterface;
+use Psr\Container\NotFoundExceptionInterface;
 
 class CompositeContainer implements ContainerInterface
 {
@@ -39,6 +45,27 @@ class CompositeContainer implements ContainerInterface
         }
 
         return false;
+    }
+
+    /**
+     * @param $callable
+     * @param array $parameters
+     * @return mixed
+     * @throws ContainerExceptionInterface
+     * @throws InvocationException
+     * @throws NotCallableException
+     * @throws NotEnoughParametersException
+     * @throws NotFoundContainerException
+     * @throws NotFoundExceptionInterface
+     */
+    public function call($callable, array $parameters = []): mixed
+    {
+        $invoker = $this->get(InvokerInterface::class);
+        if ($invoker === false) {
+            throw new NotFoundContainerException(InvokerInterface::class);
+        }
+
+        return $invoker->call($callable, $parameters);
     }
 
     /**
