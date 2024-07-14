@@ -10,6 +10,7 @@ use App\Controllers\Patterns\Creational\PrototypeController;
 use App\Controllers\Patterns\Creational\SingletonController;
 use App\Controllers\Patterns\Structural\AdapterController;
 use App\Controllers\Patterns\Structural\BridgeController;
+use App\Controllers\Patterns\Structural\CompositeController;
 use FastRoute\Dispatcher;
 use FastRoute\RouteCollector;
 use Invoker\InvokerInterface;
@@ -41,6 +42,7 @@ readonly class RouteDispatcher
             $r->addGroup('/structural', function (RouteCollector $r) {
                 $r->get('/adapter', [AdapterController::class, 'show']);
                 $r->get('/bridge', [BridgeController::class, 'show']);
+                $r->get('/composite', [CompositeController::class, 'show']);
             });
         });
 

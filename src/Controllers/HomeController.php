@@ -22,6 +22,7 @@ class HomeController
 <h3>Структурные</h3>
 <a href="/structural/adapter">Адаптер</a><br>
 <a href="/structural/bridge">Мост</a><br>
+<a href="/structural/composite">Компоновщик</a><br>
 </body>
 </html>';
     }
